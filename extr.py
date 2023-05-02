@@ -15,7 +15,7 @@ for i, match in enumerate(matches):
     with open(f'converged_geometry_{i+1}.xyz', 'w') as f:
         # Extract the atom coordinates from the match
         atom_lines = match.split('\n')[5:-41]
-        #Delete columns 0 and 2 without relevant info
+        #Get rid of columns 0 and 2 without relevant info
         atom_lines2=[atom_lines[j].split()[1]+' '+atom_lines[j].split()[3]+' '+atom_lines[j].split()[4]+' '+atom_lines[j].split()[5] for j in range(len(atom_lines))]
         coords = '\n'.join(atom_lines2)
         
